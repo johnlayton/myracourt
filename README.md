@@ -25,7 +25,8 @@
    ```
 
    ```shell
-   $> ./mvnw clean install exec:java -Dexec.args="output.csv src/main/resources/input A B" && cat output.csv         
+   $> ./mvnw clean install exec:java -Dexec.args="output.csv src/main/resources/input A B" && \
+         cat output.csv         
    ```
 
    ```shell
@@ -33,5 +34,6 @@
    ```
 
    ```shell
-   $> ./mvnw clean install exec:java -Dexec.args="output.csv src/main/resources/input A B" && cat output.csv | column -t -s,        
+   $> ./mvnw clean install exec:java -Dexec.args="output.csv src/main/resources/input A B" && \
+         cat output.csv | column -t -s,        
    ```
