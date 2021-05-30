@@ -1,0 +1,24 @@
+<configuration>
+
+    <appender name="json" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <appender name="plain" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--
+    <root level="debug">
+        <appender-ref ref="json" />
+    </root>
+-->
+
+    <logger name="com.bunnings">
+        <appender-ref ref="plain" />
+<!--        <appender-ref ref="json" />-->
+    </logger>
+
+</configuration>
