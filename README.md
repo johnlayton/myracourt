@@ -1,4 +1,4 @@
-# Bunnings Catalogue Merge  
+# Bunnings Catalog Merge  
 
 ### Prerequisites
 
