@@ -43,19 +43,13 @@ class MergeTest {
             .haveExactly(2, createMatchingStringCondition("Carbonated Water - Lemon Lime"));
         assertThat(collect)
             .extracting(Item::getSku)
-            .containsOnly(
-                "647-vyk-317",
-                "280-oad-768",
-                "165-rcy-650",
-                "167-eol-949",
-                "650-epd-782",
-                "999-eol-949",
-                "999-epd-782"
-            );
-    }
-
-    private Condition<String> createMatchingStringCondition(String s) {
-        return new Condition<>(item -> item.equals(s), s);
+            .haveExactly(1, createMatchingStringCondition("647-vyk-317"))
+            .haveExactly(1, createMatchingStringCondition("280-oad-768"))
+            .haveExactly(1, createMatchingStringCondition("165-rcy-650"))
+            .haveExactly(1, createMatchingStringCondition("167-eol-949"))
+            .haveExactly(1, createMatchingStringCondition("650-epd-782"))
+            .haveExactly(1, createMatchingStringCondition("999-eol-949"))
+            .haveExactly(1, createMatchingStringCondition("999-epd-782"));
     }
 
     @Test
@@ -173,4 +167,7 @@ class MergeTest {
         };
     }
 
+    private Condition<String> createMatchingStringCondition(String s) {
+        return new Condition<>(item -> item.equals(s), s);
+    }
 }
